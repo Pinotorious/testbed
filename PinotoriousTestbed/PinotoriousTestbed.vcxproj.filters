@@ -8,11 +8,20 @@
       <UniqueIdentifier>7f414c35-1029-44c2-9edf-4c884a01f4a1</UniqueIdentifier>
       <Extensions>bmp;fbx;gif;jpg;jpeg;tga;tiff;tif;png</Extensions>
     </Filter>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{054be9f6-8548-4484-99fe-f5a7b108b5f5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Engine\FileParse.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\string.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -22,6 +31,12 @@
     </ClInclude>
     <ClInclude Include="d3dx12.h">
       <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\FileParse.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\string.h">
+      <Filter>Engine</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -40,5 +55,11 @@
     <Image Include="Assets\WideLogo.scale-200.png">
       <Filter>Assets</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PinotoriousTestbed_TemporaryKey.pfx" />
   </ItemGroup>
 </Project>
