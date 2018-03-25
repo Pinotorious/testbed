@@ -2,20 +2,60 @@
 #ifndef FILE_PARSE_H
 #define FILE_PARSE_H
 
-#include "string.h"
+#include "file.h"
+#include "FileUtilities.h"
+#include "list.h"
+#include "StringHash.h"
 
+const int kMaxElementsPerList = 20;
+const int kMaxListsPerBlock = 20;
 
+class File;
+class ParsedFileData;
 
-const int MaxFilenameLength = 260;
+enum ParsedFileDataType
+{
+	pfdInt,
+	pfdFloat,
+	pfdStringHash,
+	pfdList,
 
-typedef String<MaxFilenameLength> FilenameString;
+	kCount
+};
+
+union ParseData
+{
+	int intData;
+	float floatData;
+	StringHash hashData;
+};
+
+class ParsedFileData
+{
+	ParsedFileDataType type;
+	StringHash key;
+	ParseData value;
+};
+
+class ParsedFileListData
+{
+	StringHash key;
+	StaticList<ParsedFileData, kMaxElementsPerList> Data;
+};
+
+class ParsedFileBlock
+{
+	StaticList<ParsedFileListData, kMaxListsPerBlock> Block;
+};
 
 class FileParser
 {
 public:
-	bool Create(FilenameString filename);
+	bool Open(FilenameString *filename);
 protected:
 
+private:
+	File file;
 };
 
 

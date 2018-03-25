@@ -218,15 +218,24 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="d3dx12.h" />
+    <ClInclude Include="Engine\File.h" />
     <ClInclude Include="Engine\FileParse.h" />
+    <ClInclude Include="Engine\FileUtilities.h" />
+    <ClInclude Include="Engine\HashTable.h" />
+    <ClInclude Include="Engine\List.h" />
     <ClInclude Include="Engine\string.h" />
+    <ClInclude Include="Engine\StringHash.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="StepTimer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Engine\File.cpp" />
     <ClCompile Include="Engine\FileParse.cpp" />
+    <ClCompile Include="Engine\HashTable.cpp" />
+    <ClCompile Include="Engine\List.cpp" />
     <ClCompile Include="Engine\string.cpp" />
+    <ClCompile Include="Engine\StringHash.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="pch.cpp">
