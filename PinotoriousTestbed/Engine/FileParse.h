@@ -5,7 +5,7 @@
 #include "file.h"
 #include "FileUtilities.h"
 #include "list.h"
-#include "StringHash.h"
+#include "Hash.h"
 
 const int kMaxElementsPerList = 20;
 const int kMaxListsPerBlock = 20;

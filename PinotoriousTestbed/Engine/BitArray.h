@@ -5,6 +5,8 @@
 #include "ArrayStorage.h"
 #include "DataTypes.h"
 
+typedef uint32 arrayBaseType;
+
 class BitArrayBase
 {
 public:
@@ -12,23 +14,30 @@ public:
 	bool GetBit(int32 index);
 	void ClearAll();
 	void SetAll();
+	virtual int32 GetSize() = 0;
 
 protected:
-	virtual int32 GetSize() = 0;
-	virtual uint8 GetData(int32 index) = 0;
-	virtual void SetData(int32 index, uint8 value)= 0;
-
+	
+	virtual int32 GetDataSize() = 0;
+	virtual arrayBaseType GetData(int32 index) = 0;
+	virtual void SetData(int32 index, arrayBaseType value)= 0;
 };
 
 template <int32 size>
 class BitArray : public BitArrayBase
 {
-protected:
-	virtual int32 GetSize() { return size; }
-	virtual uint8 GetData(int32 index) { return GetArrayEntry(index,data); }
-	virtual void SetData(int32 index, uint8 value) { SetArrayEntry(index, value, data); }
+public:
+	virtual int32 GetSize() override { return size; }
 
-	ArrayStorage <uint8,size / 8> data;
+protected:
+
+	virtual int32 GetDataSize() override { return (size / sizeof(arrayBaseType) + 1); }
+	
+	virtual arrayBaseType GetData(int32 index) override { return GetArrayEntry(index,data); }
+
+	virtual void SetData(int32 index, arrayBaseType value) override { SetArrayEntry(index, value, &data); }
+
+	ArrayStorage <arrayBaseType, (int)(size / sizeof(arrayBaseType) + 1)> data;
 };
 
 #endif //#ifndef BIT_ARRAY_H

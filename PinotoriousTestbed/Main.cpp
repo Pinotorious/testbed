@@ -133,13 +133,24 @@ public:
 
 		BitArray<32> bsbitarray;
 
+		bsbitarray.ClearAll();
+
+		bsbitarray.SetBit(27, 1);
+
+		bool works = bsbitarray.GetBit(27);
+		bool dontWork = bsbitarray.GetBit(28);
+
+		bsbitarray.SetAll();
+
+		bool shouldWork = bsbitarray.GetBit(18);
+
 		ArrayStorage<int, 32> tempArray;
 
 		SetArrayEntry(0, 4, &tempArray);
 
 		int third = GetArrayEntry(0, tempArray);
 
-		printf("%d", third);
+		printf("third:%d works:%s dontwork:%s shouldowrk:%s\n", third, works?"true":"false", dontWork?"true":"false", shouldWork?"true":"false" );
     }
 
     virtual void Run()
