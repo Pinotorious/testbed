@@ -22,3 +22,8 @@ const char* StringBase::GetData() const
 {
 	return GetDataInternal();
 }
+
+StringBase::StringBase(const char *data)
+{
+	Set(data, strlen(data));
+}

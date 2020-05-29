@@ -4,8 +4,12 @@
 
 #include "pch.h"
 #include "Game.h"
+#include "engine\ArrayStorage.h"
 
 #include <ppltasks.h>
+#include <iostream>
+#include "Engine\HashTable.h"
+#include "Engine\BitArray.h"
 
 using namespace concurrency;
 using namespace Windows::ApplicationModel;
@@ -125,6 +129,17 @@ public:
 
     virtual void Load(Platform::String^ entryPoint)
     {
+		//StringKeyHashTable<int64, 25, 32> hashTable;
+
+		BitArray<32> bsbitarray;
+
+		ArrayStorage<int, 32> tempArray;
+
+		SetArrayEntry(0, 4, &tempArray);
+
+		int third = GetArrayEntry(0, tempArray);
+
+		printf("%d", third);
     }
 
     virtual void Run()

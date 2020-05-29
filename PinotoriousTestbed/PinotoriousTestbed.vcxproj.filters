@@ -25,13 +25,19 @@
     <ClCompile Include="Engine\File.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\StringHash.cpp">
-      <Filter>Engine</Filter>
-    </ClCompile>
     <ClCompile Include="Engine\List.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
     <ClCompile Include="Engine\HashTable.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\ArrayStorage.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\hash.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\BitArray.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
   </ItemGroup>
@@ -56,13 +62,16 @@
     <ClInclude Include="Engine\FileUtilities.h">
       <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\StringHash.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
     <ClInclude Include="Engine\List.h">
       <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="Engine\HashTable.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Hash.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\BitArray.h">
       <Filter>Engine</Filter>
     </ClInclude>
   </ItemGroup>
